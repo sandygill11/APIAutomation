@@ -1,7 +1,5 @@
 package apitests;
 
-import static org.testng.Assert.assertEquals;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,18 +23,18 @@ public class ProductTests {
 		System.out.println(productRequest.getCategory());
 
 	}
-	
+
 	@Test
 	public void testGetAllProducts() {
-		
+
 		Response response = ProductsAPIClient.getAllProducts();
 		Assert.assertEquals(response.getStatusCode(), 200);
-		
+
 	}
-	
+
 	@Test
 	public void testGetProductById() {
-		
+
 		Response response = ProductsAPIClient.getProductById(2);
 		System.out.println(response.asPrettyString());
 	}
